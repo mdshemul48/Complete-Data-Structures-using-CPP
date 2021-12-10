@@ -28,6 +28,7 @@ private:
 public:
     void print()
     {
+        // this method will print full LinkedList.
         if (!this->head)
         {
             return;
@@ -44,6 +45,7 @@ public:
 
     void push(int data)
     {
+        // this method will add an new element to the back of the list.
         Node *n = new Node(data);
 
         if (!this->head)
@@ -57,6 +59,7 @@ public:
     }
     void pop()
     {
+        // this method will remove an item from back of the list.
         if (!this->head)
         {
             return;
@@ -80,6 +83,7 @@ public:
     }
     void unshift(int data)
     {
+        // this method will add new element at the beginning of the list.
         Node *n = new Node(data);
         if (!this->head)
         {
@@ -92,6 +96,7 @@ public:
     }
     void shift()
     {
+        // this method will delete an item from the beginning of the list.
         if (!this->head)
         {
             return;
