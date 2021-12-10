@@ -97,13 +97,15 @@ public:
             return;
         }
 
+        Node *deletedNode = this->head;
         if (!this->head->next)
         {
             this->head = NULL;
             this->tail = NULL;
+            delete deletedNode;
+            return;
         }
 
-        Node *deletedNode = this->head;
         this->head = this->head->next;
         delete deletedNode;
     }
@@ -126,6 +128,10 @@ int main()
     arr.unshift(2);
     arr.unshift(3);
     arr.unshift(4);
+    arr.shift();
+    arr.shift();
+    arr.shift();
+    arr.shift();
     arr.print();
 
     cout << "DONE" << endl;
