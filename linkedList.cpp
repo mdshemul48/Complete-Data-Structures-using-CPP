@@ -142,22 +142,26 @@ int main()
 {
 
     LinkedList arr;
+
     arr.push(1);
     arr.push(2);
     arr.push(3);
     arr.push(4);
-    // arr.pop();
-    // arr.pop();
-    // arr.pop();
-    // arr.pop();
-    // arr.unshift(1);
-    // arr.unshift(2);
-    // arr.unshift(3);
-    // arr.unshift(4);
-    // arr.shift();
-    // arr.shift();
-    // arr.shift();
-    // arr.shift();
+
+    arr.pop();
+    arr.pop();
+    arr.pop();
+    arr.pop();
+
+    arr.unshift(1);
+    arr.unshift(2);
+    arr.unshift(3);
+    arr.unshift(4);
+
+    arr.shift();
+    arr.shift();
+    arr.shift();
+    arr.shift();
 
     arr.insert(1, 5);
     arr.insert(2, 8);
@@ -165,6 +169,14 @@ int main()
     arr.insert(0, 10);
     arr.insert(7, 11);
     arr.insert(9, 20);
+
+    arr.pop();
+    arr.pop();
+    arr.pop();
+    arr.pop();
+    arr.pop();
+    arr.pop();
+
     arr.print();
 
     cout << "DONE" << endl;
