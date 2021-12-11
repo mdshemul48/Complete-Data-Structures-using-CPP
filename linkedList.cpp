@@ -136,6 +136,35 @@ public:
         n->next = temp->next;
         temp->next = n;
     }
+
+    void remove(int i)
+    {
+        // this method will delete the item using index.
+        if (!this->head)
+        {
+            return;
+        }
+
+        if (i == 0)
+        {
+            this->head = NULL;
+            this->tail = NULL;
+            return;
+        }
+
+        int count = 0;
+        Node *temp = this->head;
+        while (temp && count < i - 1)
+        {
+            temp = temp->next;
+            count++;
+        }
+        if (!temp->next)
+        {
+            return;
+        }
+        temp->next = temp->next->next;
+    }
 };
 
 int main()
@@ -147,35 +176,39 @@ int main()
     arr.push(2);
     arr.push(3);
     arr.push(4);
+    arr.push(5);
+    arr.push(6);
 
-    arr.pop();
-    arr.pop();
-    arr.pop();
-    arr.pop();
+    // arr.pop();
+    // arr.pop();
+    // arr.pop();
+    // arr.pop();
 
-    arr.unshift(1);
-    arr.unshift(2);
-    arr.unshift(3);
-    arr.unshift(4);
+    // arr.unshift(1);
+    // arr.unshift(2);
+    // arr.unshift(3);
+    // arr.unshift(4);
 
-    arr.shift();
-    arr.shift();
-    arr.shift();
-    arr.shift();
+    // arr.shift();
+    // arr.shift();
+    // arr.shift();
+    // arr.shift();
 
-    arr.insert(1, 5);
-    arr.insert(2, 8);
-    arr.insert(4, 6);
-    arr.insert(0, 10);
-    arr.insert(7, 11);
-    arr.insert(9, 20);
+    // arr.insert(1, 5);
+    // arr.insert(2, 8);
+    // arr.insert(4, 6);
+    // arr.insert(0, 10);
+    // arr.insert(7, 11);
+    // arr.insert(9, 20);
 
-    arr.pop();
-    arr.pop();
-    arr.pop();
-    arr.pop();
-    arr.pop();
-    arr.pop();
+    // arr.pop();
+    // arr.pop();
+    // arr.pop();
+    // arr.pop();
+    // arr.pop();
+    // arr.pop();
+
+    arr.remove(2);
 
     arr.print();
 
