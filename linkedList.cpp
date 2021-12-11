@@ -114,29 +114,57 @@ public:
         this->head = this->head->next;
         delete deletedNode;
     }
+
+    void insert(int i, int data)
+    {
+        // this method will add an item at iTh index.
+        Node *n = new Node(data);
+        if (!this->head)
+        {
+            firstNode(n);
+            return;
+        }
+
+        int count = 0;
+        Node *temp = head;
+
+        while (temp->next && count < i - 1)
+        {
+            temp = temp->next;
+            count++;
+        }
+        n->next = temp->next;
+        temp->next = n;
+    }
 };
 
 int main()
 {
 
     LinkedList arr;
-
     arr.push(1);
     arr.push(2);
     arr.push(3);
     arr.push(4);
-    arr.pop();
-    arr.pop();
-    arr.pop();
-    arr.pop();
-    arr.unshift(1);
-    arr.unshift(2);
-    arr.unshift(3);
-    arr.unshift(4);
-    arr.shift();
-    arr.shift();
-    arr.shift();
-    arr.shift();
+    // arr.pop();
+    // arr.pop();
+    // arr.pop();
+    // arr.pop();
+    // arr.unshift(1);
+    // arr.unshift(2);
+    // arr.unshift(3);
+    // arr.unshift(4);
+    // arr.shift();
+    // arr.shift();
+    // arr.shift();
+    // arr.shift();
+
+    arr.insert(1, 5);
+    arr.insert(2, 8);
+    arr.insert(4, 6);
+    arr.insert(0, 10);
+    arr.insert(7, 11);
+    arr.insert(9, 20);
     arr.print();
 
     cout << "DONE" << endl;
