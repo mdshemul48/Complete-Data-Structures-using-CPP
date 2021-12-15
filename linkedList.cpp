@@ -165,6 +165,27 @@ public:
         }
         temp->next = temp->next->next;
     }
+
+    void reverse()
+    {
+        // adding revserse function in this linkedList;
+        if (!this->head)
+        {
+            return;
+        }
+
+        Node *current = this->head;
+        Node *prevNode = NULL;
+        while (current != NULL)
+        {
+            Node *n = current->next;
+            current->next = prevNode;
+
+            prevNode = current;
+            current = n;
+        }
+        this->head = prevNode;
+    }
 };
 
 int main()
@@ -208,8 +229,8 @@ int main()
     // arr.pop();
     // arr.pop();
 
-    arr.remove(2);
-
+    // arr.remove(2);
+    arr.reverse();
     arr.print();
 
     cout << "DONE" << endl;
